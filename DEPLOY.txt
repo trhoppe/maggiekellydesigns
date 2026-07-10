@@ -1,0 +1,90 @@
+Maggie Kelly Designs — Deploy to GitHub Pages
+=============================================
+
+You'll: (1) put these files in a repo, (2) turn on Pages,
+(3) point maggiekellydesigns.com at GitHub.
+
+--------------------------------------------------
+STEP 1 — Create the repo & add the files
+--------------------------------------------------
+Option A (web, easiest):
+  1. github.com -> New repository. Name it anything (e.g. "maggiekellydesigns").
+     Public. Don't add a README.
+  2. On the new repo page click "uploading an existing file".
+  3. Unzip this folder and drag EVERYTHING INSIDE it (index.html, teaching.html,
+     the other .html files, and the css/ and js/ folders) into the upload box.
+     IMPORTANT: upload the CONTENTS of the site folder, not the site folder itself,
+     so index.html sits at the repo root.
+  4. Commit.
+
+Option B (git command line):
+  cd site
+  git init
+  git add .
+  git commit -m "New Maggie Kelly Designs site"
+  git branch -M main
+  git remote add origin https://github.com/YOUR_USERNAME/maggiekellydesigns.git
+  git push -u origin main
+
+--------------------------------------------------
+STEP 2 — Turn on GitHub Pages
+--------------------------------------------------
+  1. Repo -> Settings -> Pages.
+  2. "Build and deployment" -> Source: "Deploy from a branch".
+  3. Branch: main   Folder: / (root)   -> Save.
+  4. Wait ~1 minute. You'll get a live URL like:
+     https://YOUR_USERNAME.github.io/maggiekellydesigns/
+     Check it works.
+
+--------------------------------------------------
+STEP 3 — Point your domain (maggiekellydesigns.com)
+--------------------------------------------------
+A) Tell GitHub the domain:
+   Settings -> Pages -> "Custom domain" -> enter:  maggiekellydesigns.com  -> Save.
+   (This creates a CNAME file in the repo. A matching one is already included
+    here so it survives re-uploads.)
+
+B) Set DNS where the domain is managed. Your domain is registered through
+   WordPress.com, so log in there:
+   WordPress.com -> Upgrades/Domains -> maggiekellydesigns.com -> DNS records / Name servers.
+
+   NOTE: if the domain is currently "connected" to your WordPress.com SITE,
+   disconnect/detach the site mapping first (Domain settings -> stop forwarding
+   to the WP site) so DNS records take effect.
+
+   Add these records:
+
+   Apex domain (maggiekellydesigns.com) — four A records:
+     A   @   185.199.108.153
+     A   @   185.199.109.153
+     A   @   185.199.110.153
+     A   @   185.199.111.153
+   (Optional IPv6 — four AAAA records:)
+     AAAA @ 2606:50c0:8000::153
+     AAAA @ 2606:50c0:8001::153
+     AAAA @ 2606:50c0:8002::153
+     AAAA @ 2606:50c0:8003::153
+
+   www subdomain — one CNAME:
+     CNAME  www   YOUR_USERNAME.github.io
+
+C) Back in Settings -> Pages, tick "Enforce HTTPS" once it becomes available
+   (can take up to ~24h for the certificate; DNS changes can take a few hours
+   to propagate).
+
+--------------------------------------------------
+AFTER IT'S LIVE — two quick edits
+--------------------------------------------------
+1. Contact form: create a free form at formspree.io, then in contact.html
+   replace YOUR_FORM_ID in action="https://formspree.io/f/YOUR_FORM_ID"
+   with your real endpoint. Commit/re-upload.
+
+2. (Optional) Images currently load from your old maggiekellydesigns.com URLs.
+   Once DNS moves to GitHub, that old WordPress site may go away — so download
+   your images and drop them in the images/ folder, then swap the long
+   https://maggiekellydesigns.com/... image links for local images/... paths.
+   See README.txt for the filename list. Do this BEFORE switching DNS if you
+   want zero downtime on images.
+
+Every future change: edit the files, commit/push (or re-upload), and GitHub
+Pages redeploys automatically in about a minute.

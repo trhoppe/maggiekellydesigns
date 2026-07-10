@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Maggie Kelly Designs</title>
+<meta name="description" content="Get in touch with Maggie Kelly for design, branding, web, UX/UI, and teaching inquiries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav">
+    <a class="logo" href="index.html">
+      <span class="mark">mk</span>
+      <span class="word">Maggie Kelly</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="index.html">Portfolio</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap">
+    <div class="page-hero">
+      <div class="eyebrow">Contact</div>
+      <h1>Let's start a <span class="italic">conversation.</span></h1>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Say hello</h2>
+        <p>Whether it's a brand, a website, a class, or a workshop — I'd love to hear what you're working on. Fill out the form or email me directly.</p>
+        <div style="margin-top:26px;">
+          <a class="email" href="mailto:maggiekellydesigns@gmail.com">maggiekellydesigns@gmail.com</a>
+        </div>
+        <div class="contact-meta">
+          Based in New Mexico<br>
+          Available for freelance &amp; teaching
+        </div>
+      </div>
+
+      <form class="form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark">Send Message</button>
+        <div id="form-status" style="margin-top:16px;font-size:15px;"></div>
+        <p class="form-note">This form uses Formspree. Replace <strong>YOUR_FORM_ID</strong> in the form's action URL with your own Formspree endpoint (formspree.io) to start receiving emails.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="big">Maggie Kelly Designs</div>
+      <a class="email" href="mailto:maggiekellydesigns@gmail.com">maggiekellydesigns@gmail.com</a>
+    </div>
+    <div class="footer-copy">© 2026 Maggie Kelly Designs</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
