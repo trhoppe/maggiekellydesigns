@@ -65,8 +65,8 @@ B) Set DNS where the domain is managed. Your domain is registered through
      AAAA @ 2606:50c0:8002::153
      AAAA @ 2606:50c0:8003::153
 
-   www subdomain — one CNAME:
-     CNAME  www   YOUR_USERNAME.github.io
+   www subdomain — one CNAME (value is your ROOT github.io, no repo name):
+     CNAME  www   trhoppe.github.io
 
 C) Back in Settings -> Pages, tick "Enforce HTTPS" once it becomes available
    (can take up to ~24h for the certificate; DNS changes can take a few hours
